@@ -158,7 +158,7 @@ def authenticate():
         key_id = get_random_kid()
     jwt_kids.add(key_id)
     token = jwt.encode(payload, private_key, algorithm='RS256', headers={'kid': key_id})
-    return jsonify({"access_token": token})
+    return jsonify({"token": token})
 
 if __name__ == '__main__':
     app.run(port=8080)
